@@ -1,0 +1,20 @@
+const AlphabetHelper = require('../../src/lexer/AlphabetHelper')
+
+describe('test AlphabetHelper', () => {
+    it('char check', () => {
+        expect(AlphabetHelper.isLetter('a')).toBe(true)
+        expect(AlphabetHelper.isLetter('b')).toBe(true)
+        expect(AlphabetHelper.isLetter('A')).toBe(true)
+        expect(AlphabetHelper.isLetter('1')).toBe(false)
+        expect(AlphabetHelper.isOperator('*')).toBe(true)
+        expect(AlphabetHelper.isOperator('&')).toBe(true)
+        expect(AlphabetHelper.isOperator(' ')).toBe(false)
+        expect(AlphabetHelper.isNumber('1')).toBe(true)
+        expect(AlphabetHelper.isNumber('a')).toBe(false)
+        expect(AlphabetHelper.isLiteral('a')).toBe(true)
+        expect(AlphabetHelper.isLiteral('_')).toBe(true)
+        expect(AlphabetHelper.isLiteral('1')).toBe(true)
+        expect(AlphabetHelper.isLiteral('a')).toBe(true)
+        expect(AlphabetHelper.isLiteral('Z')).toBe(true)
+    })
+})
